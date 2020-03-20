@@ -13,7 +13,7 @@ const DEVICE_WIDTH = Dimensions.get('window').width;
 
 const AddTodo = props => {
 	const {
-		todos,
+		bucketlists,
 		actions,
 		style,
 	} = props;
@@ -23,7 +23,7 @@ const AddTodo = props => {
 
 	const _onSubmitEditing = () => {
 		if (textValue.length > 0) {
-			actions.startAddTodo(textValue);
+			actions.startAddBucketlist(textValue);
 		}
 		textInput.clear();
 	}
@@ -72,4 +72,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default AddTodo;
+export default AddBucketlist;
