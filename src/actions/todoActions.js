@@ -3,41 +3,41 @@ import { Alert } from 'react-native';
 import firebase, {firebaseRef} from '../firebase';
 
 
-export function fetchTodos(uid) {
+export function fetchBucketlists(uid) {
   return (dispatch, getState) => {
-    const todosRef = firebaseRef.child(`todos/${uid}`);
+    const bucketlistsRef = firebaseRef.child(`bucketlists/${uid}`);
 
-    return todosRef.once('value').then(snapshot => {
-      const todos = snapshot.val() || {};
+    return bucketlistsRef.once('value').then(snapshot => {
+      const bucketlists = snapshot.val() || {};
 
-      Object.keys(todos).map(todoId => {
+      Object.keys(todos).map(bucketlistId => {
         const parsedTodos = {
-          id: todoId,
-          ...todos[todoId]
+          id: buckelistId,
+          ...bucketlists[bucketlist]
         };
 
-        dispatch(addTodo(parsedTodos));
+        dispatch(addBucketlist(parsedbucketlists));
       });
     });
   };
 }
 
-export function startAddTodo(text) {
+export function startAddBucketlist(text) {
   return (dispatch, getState) => {
     const UID = firebase.auth().currentUser.uid;
-    const todo = {
+    const bucketlist = {
       text,
       isDone: false,
       isStarred: false
     };
-    const todoRef = firebaseRef.child(`todos/${UID}`).push(todo);
+    const bucketlistRef = firebaseRef.child(`bucketlists/${UID}`).push(bucketlist);
 
-    dispatch(addTodo({
-      id: todoRef.key,
-      ...todo
+    dispatch(addBucketlist({
+      id: bucketlistRef.key,
+      ...bucketlist
     }));
 
-    todoRef.then(snapshot => {
+    bucketlistRef.then(snapshot => {
       return;
     }, error => {
       Alert.alert(JSON.stringify(error.message));
@@ -45,16 +45,16 @@ export function startAddTodo(text) {
   };
 }
 
-export function startUpdateTodo(id, key, value) {
+export function startUpdateBucketlist(id, key, value) {
   return (dispatch, getState) => {
     const UID = firebase.auth().currentUser.uid;
-    const todoRef = firebaseRef.child(`todos/${UID}/${id}`);
+    const todoRef = firebaseRef.child(`bucketlists/${UID}/${id}`);
     let updates = {};
     updates[key] = value;
 
-    dispatch(updateTodo(id, updates));
+    dispatch(updateBucketlist(id, updates));
 
-    todoRef.update(updates).then(snapshot => {
+    bucketlistRef.update(updates).then(snapshot => {
       return;
     }, error => {
       Alert.alert(JSON.stringify(error.message));
@@ -62,10 +62,10 @@ export function startUpdateTodo(id, key, value) {
   };
 }
 
-export function startRemoveTodo(id) {
+export function startRemoveBucketlist(id) {
   return (dispatch, getState) => {
     const UID = firebase.auth().currentUser.uid;
-    const todoRef = firebaseRef.child(`todos/${UID}/${id}`);
+    const todoRef = firebaseRef.child(`bucketlists/${UID}/${id}`);
 
     dispatch(removeTodo(id));
 
@@ -137,52 +137,52 @@ export function changeCondition(payload) {
   }
 }
 
-export function addTodo(payload) {
+export function addBucketlist(payload) {
   return {
-    type: types.ADD_TODO,
+    type: types.ADD_BUCKETLIST,
     payload
   };
 }
 
-export function updateTodo(id, payload) {
+export function updateBucketlist(id, payload) {
   return {
-    type: types.UPDATE_TODO,
+    type: types.UPDATE_BUCKETLIST,
     id,
     payload
   };
 }
 
-export function deleteAllTodo() {
+export function deleteAllBucketlist() {
   return {
-    type: types.DELETE_ALL_TODO
+    type: types.DELETE_ALL_BUCKETLIST
   }
 }
 
-export function toggleStarTodo(id) {
+export function toggleStarBucketlist(id) {
   return {
-    type: types.TOGGLE_STAR_TODO,
+    type: types.TOGGLE_STAR_BUCKETLIST,
     id
   };
 }
 
-export function toggleEditTodo(id) {
+export function toggleEditBucketlist(id) {
   return {
-    type: types.TOGGLE_EDIT_TODO,
+    type: types.TOGGLE_EDIT_BUCKETLIST,
     id
   }
 }
 
-export function editTodo(id, text) {
+export function editBucketlist(id, text) {
   return {
-    type: types.EDIT_TODO,
+    type: types.EDIT_BUCKETLIST,
     id,
     text
   };
 }
 
-export function removeTodo(id) {
+export function removeBucketlist(id) {
   return {
-    type: types.REMOVE_TODO,
+    type: types.REMOVE_BUCKETLIST,
     id
   };
 }
