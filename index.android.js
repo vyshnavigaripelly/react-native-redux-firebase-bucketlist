@@ -4,11 +4,11 @@ import { AppRegistry } from 'react-native';
 import {Provider} from 'react-redux';
 import configureStore from './src/store/configureStore';
 import App from './src/components/';
-import * as actions from './src/actions/todoActions';
+import * as actions from './src/actions/bucketlistActions';
 
 const store = configureStore();
 
-class todo extends Component {
+class bucketlist extends Component {
   componentDidMount() {
     codePush.sync({installMode: codePush.InstallMode.IMMEDIATE});
   }
@@ -22,4 +22,4 @@ class todo extends Component {
   }
 }
 
-AppRegistry.registerComponent( 'todo', () => codePush(todo) );
+AppRegistry.registerComponent( 'bucketlist', () => codePush(todo) );
