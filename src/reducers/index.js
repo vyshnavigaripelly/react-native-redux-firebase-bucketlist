@@ -1,12 +1,12 @@
 import {combineReducers} from 'redux';
-import todos from './todoReducer';
+import bucketlists from './bucketlistReducer';
 import visibilityFilter from './visibilityFilterReducer';
 import formData from './formReducer';
 import userData from './userDataReducer';
 import condition from './conditionReducer';
 
 const rootReducer = combineReducers({
-  todos,
+  bucketlists,
   visibilityFilter,
   formData,
   userData,
