@@ -1,1 +1,1 @@
-import './index.android';,
+import './index.android';
