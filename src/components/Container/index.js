@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as todoActions from '../../actions/todoActions';
+import * as bucketlistActions from '../../actions/bucketlistActions';
 import {
 	StyleSheet,
 	Image,
@@ -16,7 +16,7 @@ class Container extends Component {
 	render() {
 		const {
 			children,
-			todos,
+			bucketlists,
 			actions,
 			formData,
 			visibilityFilter,
@@ -27,7 +27,7 @@ class Container extends Component {
 		const renderChildren = Array.isArray(children) ?
 			children.map((child, key) => React.cloneElement(child, {
 				key,
-				todos,
+				bucketlists,
 				actions,
 				formData,
 				visibilityFilter,
@@ -36,7 +36,7 @@ class Container extends Component {
 			}))
 			:
 			React.cloneElement(children, {
-				todos,
+				bucketlists,
 				actions,
 				formData,
 				visibilityFilter,
@@ -86,7 +86,7 @@ Container.propTypes = {
 	style: PropTypes.number,
 	source: PropTypes.number,
 	wallpaper: PropTypes.bool,
-	todos: PropTypes.array.isRequired,
+	bucketlists: PropTypes.array.isRequired,
 	actions: PropTypes.object.isRequired,
 	formData: PropTypes.object.isRequired,
 	visibilityFilter: PropTypes.string.isRequired,
@@ -96,7 +96,7 @@ Container.propTypes = {
 
 function mapStateToProps(state) {
 	return {
-		todos: state.todos,
+		bucketlists: state.bucketlists,
 		formData: state.formData,
 		visibilityFilter: state.visibilityFilter,
 		userData: state.userData,
@@ -106,7 +106,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
 	return {
-		actions: bindActionCreators(todoActions, dispatch)
+		actions: bindActionCreators(bucketlistActions, dispatch)
 	};
 }
 
