@@ -35,4 +35,4 @@ ButtonIcon.propTypes = {
 	height: PropTypes.number.isRequired,
 };
 
-export default ButtonIcon;.
+export default ButtonIcon;
