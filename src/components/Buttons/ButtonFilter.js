@@ -42,4 +42,4 @@ ButtonFilter.propTypes = {
 	UnactiveStyle: PropTypes.number.isRequired,
 };
 
-export default ButtonFilter;
+export default ButtonFilter;.
