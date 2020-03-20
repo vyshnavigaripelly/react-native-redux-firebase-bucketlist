@@ -10,4 +10,4 @@ it('renders correctly', () => {
     <Index />
   );
 });
-.
+
