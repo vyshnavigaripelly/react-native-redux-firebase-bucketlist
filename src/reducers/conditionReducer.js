@@ -15,3 +15,4 @@ export default function conditionReducer(state = initialState, action) {
   }
 
 }
+
