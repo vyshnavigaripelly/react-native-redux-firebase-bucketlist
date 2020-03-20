@@ -1,9 +1,8 @@
 # React Native Redux Firebase Todo 
 
-![demo](https://raw.githubusercontent.com/dwicao/react-native-redux-firebase-todo/master/demo.gif) 
-
+![demo]
 ## Download
-[MyTodo.apk](https://github.com/dwicao/react-native-redux-firebase-todo/releases/download/v1.0/myTodo.apk)
+[MyBucketlist.apk](https://github.com/vyshnavigaripelly/react-native-redux-firebase-bucketlist/releases/download/v1.0/myBucketlist.apk)
 
 ## Technology Stack
 * React Native
@@ -17,10 +16,10 @@
 
 ## Install at local
 Open Terminal, then type command:  
-> git clone https://github.com/dwicao/react-native-redux-firebase-todo.git
+> git clone https://github.com/vyshnavigaripelly/react-native-redux-firebase-bucketlist.git
 
 Go to project folder :
-> cd react-native-redux-firebase-todo
+> cd react-native-redux-firebase-bucketlist
 
 Type following command :  
 > npm install  
