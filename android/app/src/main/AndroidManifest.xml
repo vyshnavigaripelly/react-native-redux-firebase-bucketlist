@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.dwicao.mytodo"
+    package="com.vyshnavigaripelly.mybucketlist"
     android:versionCode="1"
     android:versionName="1.0">
 
@@ -28,4 +28,4 @@
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
     </application>
 
-</manifest>.
+</manifest>
