@@ -11,9 +11,9 @@ import {
 
 import backIcon from '../../icons/back.png';
 
-const EditTodo = props => {
+const EditBucketlist = props => {
 	const {
-		todos,
+		bucketlists,
 		actions,
 		id,
 		text
@@ -22,8 +22,8 @@ const EditTodo = props => {
 	let textValue = text;
 
 	const _onPress = () => {
-		actions.editTodo(id, textValue);
-		actions.startUpdateTodo(id, 'text', textValue);
+		actions.editBucketlist(id, textValue);
+		actions.startUpdateBucketlist(id, 'text', textValue);
 		Actions.mainScreen({type: ActionConst.RESET});
 	}
 
@@ -86,4 +86,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default EditTodo;
+export default EditBucketlist;
