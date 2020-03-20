@@ -15,7 +15,7 @@ import logoSrc from '../../images/logo.png';
 
 const ControlPanel = props => {
   const {
-    todos,
+    bucketlists,
     actions,
     formData,
     userData,
@@ -30,51 +30,51 @@ const ControlPanel = props => {
     });
   };
 
-  const _getActiveTodo = () => {
-    let totalActiveTodo = 0;
+  const _getActiveBucketlist = () => {
+    let totalActiveBucketlist = 0;
 
-    todos.map(todo => {
-      if (!todo.isDone) {
-        totalActiveTodo++;
+    bucketlists.map(bucketlist => {
+      if (!bucketlist.isDone) {
+        totalActiveBucketlist++;
       }
     });
 
-    return totalActiveTodo;
+    return totalActiveBucketlist;
   }
 
-  const _getCompletedTodo = () => {
-    let totalCompletedTodo = 0;
+  const _getCompletedBucketlist = () => {
+    let totalCompletedBucketlist = 0;
 
-    todos.map(todo => {
-      if (!!todo.isDone) {
-        totalCompletedTodo++;
+    bucketlists.map(bucketlist => {
+      if (!!bucketlist.isDone) {
+        totalCompletedBucketlist++;
       }
     });
 
-    return totalCompletedTodo;
+    return totalCompletedBucketlist;
   }
 
-  const _getFavoritedTodo = () => {
-    let totalFavoritedTodo = 0;
+  const _getFavoritedBucketlist = () => {
+    let totalFavoritedBucketlist = 0;
 
-    todos.map(todo => {
-      if (!!todo.isStarred) {
-        totalFavoritedTodo++;
+    bucketlists.map(bucketlist => {
+      if (!!bucketlist.isStarred) {
+        totalFavoritedBucketlist++;
       }
     });
 
-    return totalFavoritedTodo;
+    return totalFavoritedBucketlist;
   }
 
-  const _getTotalTodos = () => {
-    return todos.length;
+  const _getTotalBucketlists = () => {
+    return bucketlists.length;
   }
 
   return (
     <View style={styles.container}>
       <Image style={styles.logo} source={logoSrc} />
       <Text style={styles.logoDescription}>
-        My Todo
+        My Buketlist
       </Text>
       <View style={styles.headerWrapper}>
         <Text style={styles.header}>
@@ -87,16 +87,16 @@ const ControlPanel = props => {
           Statistics
         </Text>
         <Text style={styles.stats}>
-          {`${_getActiveTodo()} Active\n`}
+          {`${_getActiveBucketlist()} Active\n`}
         </Text>
         <Text style={styles.stats}>
-          {`${_getCompletedTodo()} Completed\n`}
+          {`${_getCompletedBucketlist()} Completed\n`}
         </Text>
         <Text style={styles.stats}>
-          {`${_getFavoritedTodo()} Favorited\n`}
+          {`${_getFavoritedBucketlist()} Favorited\n`}
         </Text>
         <Text style={[styles.stats, styles.statsLastChild]}>
-          {`${_getTotalTodos()} Total Todos\n`}
+          {`${_getTotalBucketlists()} Total Bucketlists\n`}
         </Text>
       </View>
       <View style={styles.buttonWrapper}>
