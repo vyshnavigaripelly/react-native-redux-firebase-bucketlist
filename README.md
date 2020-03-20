@@ -1,6 +1,6 @@
-# React Native Redux Firebase Todo 
+# React Native Redux Firebase Bucketlist
 
-![demo]
+
 ## Download
 [MyBucketlist.apk](https://github.com/vyshnavigaripelly/react-native-redux-firebase-bucketlist/releases/download/v1.0/myBucketlist.apk)
 
