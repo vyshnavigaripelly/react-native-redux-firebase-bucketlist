@@ -11,4 +11,4 @@ export default function visibilityFilterReducer(state = 'SHOW_ALL', action) {
   }
 
 }
-.
+
